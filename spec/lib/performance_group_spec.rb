@@ -22,4 +22,10 @@ describe 'PerformanceGroup' do
     @mygroup.albums = albums
   end
 
+  it 'prints a list of albums' do
+    albums = ["24","19"]
+    @mygroup.albums = albums
+    expect(@mygroup.list_albums).to eq "19\n24\n"
+  end
+
 end
