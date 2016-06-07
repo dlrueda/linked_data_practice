@@ -2,22 +2,24 @@ require 'spec_helper'
 require 'PerformanceGroup'
 
 describe 'PerformanceGroup' do
+  before :each do
+    @mygroup = PerformanceGroup.new
+  end
+
   it 'instantiates' do
-    expect(PerformanceGroup.new).to be_kind_of(PerformanceGroup)
+    expect(@mygroup).to be_kind_of(PerformanceGroup)
   end
 
   it 'has a name' do
-    mygroup = PerformanceGroup.new
-    mygroup.name = 'Adele'
-    expect(mygroup.name).to eq 'Adele'
+    @mygroup.name = 'Adele'
+    expect(@mygroup.name).to eq 'Adele'
 
-    puts mygroup.name
+    puts @mygroup.name
   end
 
   it 'has a list of albums' do
     albums = ["19","24"]
-    mygroup = PerformanceGroup.new
-    mygroup.albums = albums
+    @mygroup.albums = albums
   end
 
 end
